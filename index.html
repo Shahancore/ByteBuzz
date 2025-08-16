@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ByteBuzz — Smart, Snackable Tech & Web Tips</title>
+  <meta name="description" content="Practical tech and web tips in under 3 minutes. Clean UX, fast loads, and useful guides." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>⚡</text></svg>">
+  <meta property="og:title" content="ByteBuzz — Smart, Snackable Tech & Web Tips" />
+  <meta property="og:description" content="Practical tech and web tips in under 3 minutes." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://your-domain.example/" />
+  <meta name="robots" content="index,follow" />
+  <style>
+    :root{
+      --bg:#0c0f14; --panel:#101621; --soft:#0e141e; --ink:#e9f0f5; --muted:#a9b4c0; --brand:#6ef3a5; --line:#1a2230;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:16px/1.65 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif}
+    img{max-width:100%;display:block}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{opacity:.9}
+    .wrap{max-width:1100px;margin:0 auto;padding:16px}
+    header{position:sticky;top:0;z-index:50;background:rgba(12,15,20,.8);backdrop-filter:saturate(160%) blur(10px);border-bottom:1px solid var(--line)}
+    nav{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.5px}
+    .navlinks{display:flex;gap:10px;flex-wrap:wrap}
+    .pill{border:1px solid var(--line);color:var(--muted);padding:8px 12px;border-radius:999px}
+    .hero{border-bottom:1px solid var(--line);background:radial-gradient(1200px 300px at 50% -60%, rgba(110,243,165,.12), transparent), linear-gradient(180deg, rgba(110,243,165,.06), rgba(110,243,165,0))}
+    .hero h1{margin:0;padding:26px 0 6px;font-size:28px}
+    .hero p{margin:0 0 14px;color:var(--muted)}
+    main{display:grid;grid-template-columns:1fr;gap:18px}
+    @media(min-width:980px){ main{grid-template-columns:minmax(0,1fr) 320px} }
+    .card{background:linear-gradient(180deg,var(--panel),var(--soft));border:1px solid var(--line);border-radius:16px;padding:16px}
+    .title{font-size:20px;margin:0 0 6px}
+    .meta{font-size:12px;color:var(--muted);margin:0 0 10px}
+    .content{color:#d7e2ea;font-size:15px}
+    .grid{display:grid;gap:14px}
+    .posts{display:grid;gap:14px}
+    .featured{display:grid;gap:14px}
+    @media(min-width:720px){ .featured{grid-template-columns:repeat(3,1fr)} }
+    .tag{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:12px}
+    footer{border-top:1px solid var(--line);color:var(--muted);margin-top:24px}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid var(--line);background:#0f1420;color:var(--ink);cursor:pointer}
+    .btn:active{transform:translateY(1px)}
+    .hidden{display:none}
+    .prose h2{margin:14px 0 8px;font-size:20px}
+    .prose p{margin:10px 0}
+    .prose li{margin:6px 0}
+    .kbd{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;background:#0d1220;border:1px solid var(--line);padding:0 6px;border-radius:8px}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "ByteBuzz",
+    "url": "https://your-domain.example/",
+    "logo": "https://your-domain.example/logo.png",
+    "sameAs": ["https://x.com/yourhandle", "https://instagram.com/yourhandle"]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <nav>
+        <a class="logo" href="#/">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12h5l2-8 4 16 2-8h5" stroke="currentColor" stroke-width="1.5"/></svg>
+          <span>ByteBuzz</span>
+        </a>
+        <div class="navlinks">
+          <a class="pill" href="#/">Home</a>
+          <a class="pill" href="#/articles">Articles</a>
+          <a class="pill" href="#/about">About</a>
+          <a class="pill" href="#/contact">Contact</a>
+          <a class="pill" href="#/privacy">Privacy</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <h1>Smart, Snackable Tech & Web Tips</h1>
+      <p>Short articles that actually help. Built clean so AdSense reviewers see real value.</p>
+      <button id="ctaSubscribe" class="btn">Get Weekly Tips</button>
+    </div>
+  </section>
+
+  <main class="wrap">
+    <section id="view-home" class="grid">
+      <div class="featured"></div>
+      <div class="posts"></div>
+    </section>
+
+    <aside id="sidebar" class="grid">
+      <div class="card">
+        <h3 class="title">Popular Topics</h3>
+        <div class="grid" style="grid-template-columns:repeat(3,auto)">
+          <span class="tag">Performance</span>
+          <span class="tag">Web Games</span>
+          <span class="tag">SEO</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">Design</span>
+          <span class="tag">Tools</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3 class="title">About ByteBuzz</h3>
+        <p class="content">We publish practical, 3‑minute reads about building and growing sites & apps. No fluff, just steps.</p>
+      </div>
+    </aside>
+
+    <!-- Routed Views -->
+    <section id="view-articles" class="hidden">
+      <div class="grid" id="articles-list"></div>
+    </section>
+
+    <section id="view-about" class="hidden card prose">
+      <h2>About</h2>
+      <p>ByteBuzz is a tiny publication focused on fast, useful tutorials for creators, students, and indie devs. Our goal is clear: help you build better sites and ship quicker.</p>
+      <p>Editorial policy: original writing, no AI‑generated spam, and transparent updates.</p>
+    </section>
+
+    <section id="view-contact" class="hidden card prose">
+      <h2>Contact</h2>
+      <p>Got feedback, a tip, or a press inquiry? Email <span class="kbd">hello@your-domain.example</span> or use the form below.</p>
+      <form onsubmit="event.preventDefault(); alert('Thanks! We\'ll reply soon.'); this.reset();">
+        <label>Name<br><input required style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--line);background:#0e1420;color:var(--ink)"/></label>
+        <br><br>
+        <label>Email<br><input type="email" required style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--line);background:#0e1420;color:var(--ink)"/></label>
+        <br><br>
+        <label>Message<br><textarea required rows="5" style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--line);background:#0e1420;color:var(--ink)"></textarea></label>
+        <br><br>
+        <button class="btn" type="submit">Send</button>
+      </form>
+    </section>
+
+    <section id="view-privacy" class="hidden card prose">
+      <h2>Privacy Policy</h2>
+      <p>We collect minimal analytics to understand what content is useful. No sale of personal data. Cookies may be used for basic site functionality. If we add advertising later (e.g., Google AdSense), we will update this policy with consent details and partner disclosures.</p>
+      <h3>Data We Collect</h3>
+      <ul>
+        <li>Anonymous usage data (page views, device type)</li>
+        <li>Voluntary messages from the contact form</li>
+      </ul>
+      <h3>Your Controls</h3>
+      <ul>
+        <li>Use an ad/tracker blocker if you prefer</li>
+        <li>Contact us to delete your messages</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <p>© <span id="year"></span> ByteBuzz — All rights reserved.</p>
+    <p><small>Fast, readable, and useful by design. Built with plain HTML/CSS/JS so it deploys cleanly on Vercel.</small></p>
+  </footer>
+
+  <template id="tpl-post-card">
+    <article class="card">
+      <img class="thumb" alt="" />
+      <h2 class="title"></h2>
+      <p class="meta"></p>
+      <p class="content"></p>
+      <a class="btn readmore" href="#">Read More</a>
+    </article>
+  </template>
+
+  <script>
+    // ---- Minimal SPA Router (hash-based) ----
+    const routes = {
+      '#/': 'view-home',
+      '#/articles': 'view-articles',
+      '#/about': 'view-about',
+      '#/contact': 'view-contact',
+      '#/privacy': 'view-privacy'
+    };
+    function renderRoute(){
+      const hash = location.hash || '#/';
+      const viewId = routes[hash] || 'view-home';
+      document.querySelectorAll('main > section').forEach(sec=>sec.classList.add('hidden'));
+      document.getElementById(viewId).classList.remove('hidden');
+      // toggle sidebar on home only (and desktop by CSS grid)
+      document.getElementById('sidebar').style.display = (viewId === 'view-home') ? '' : 'none';
+    }
+    window.addEventListener('hashchange', renderRoute);
+
+    // ---- Demo Content (substantial, human-written style) ----
+    const posts = [
+      {
+        id:'instant-lcp',
+        title:'Cut Largest Contentful Paint in 5 Minutes',
+        date:'2025-07-28',
+        thumb:`https://picsum.photos/seed/lcp/800/500`,
+        excerpt:'Quick wins to get your LCP under 2.5s without a full rewrite.',
+        body:`<p>Start by serving a compressed hero image (AVIF/WebP) sized to the viewport. Inline a tiny critical CSS block for the above-the-fold layout, then defer everything else with <code>rel=\"preload\"</code> for fonts and <code>defer</code> for scripts. Avoid layout shift by reserving image space with width/height.</p>
+        <p>Measure with PageSpeed Insights, repeat until LCP falls below 2.5s. It\'s boring, but boring is fast.</p>`
+      },
+      {
+        id:'seo-setup',
+        title:'Zero-Overwhelm SEO Setup for New Sites',
+        date:'2025-07-12',
+        thumb:`https://picsum.photos/seed/seo/800/500`,
+        excerpt:'Skip the guru noise. Here\'s a clean checklist that works.',
+        body:`<ul><li>Create a human homepage that states who you are, what you do, and for whom.</li><li>Add <code>sitemap.xml</code> and submit to Search Console.</li><li>Write 3 helpful articles that solve real problems (no keyword stuffing).</li><li>Make every page load fast on mobile.</li></ul>`
+      },
+      {
+        id:'katgame-retention',
+        title:'Keep Players Longer: 6 Tiny UX Tweaks for Web Games',
+        date:'2025-06-30',
+        thumb:`https://picsum.photos/seed/ux/800/500`,
+        excerpt:'Session length is revenue. These tweaks raise both.',
+        body:`<ol><li>Add a progress indicator so players know there\'s more to see.</li><li>Between scenes, tease a choice that unlocks a secret ending.</li><li>Prefetch assets for the next scene to remove stutters.</li><li>Offer a one-click \"share my ending\" button.</li><li>Surface \"Play Again\" with a new path suggested.</li><li>Respect back/forward navigation.</li></ol>`
+      },
+      {
+        id:'image-ops',
+        title:'Serve Images Like a Pro (Without a CDN)',
+        date:'2025-05-18',
+        thumb:`https://picsum.photos/seed/img/800/500`,
+        excerpt:'A few headers and formats take you 80% of the way.',
+        body:`<p>Export AVIF first with WebP fallback. Use <code>fetchpriority=\"high\"</code> for the hero, <code>loading=\"lazy\"</code> elsewhere. Set long cache headers and unique filenames per build to bust cache safely.</p>`
+      },
+      {
+        id:'monetize',
+        title:'Monetization 101: Ads, Affiliates, and Sponsors',
+        date:'2025-04-22',
+        thumb:`https://picsum.photos/seed/money/800/500`,
+        excerpt:'Stack revenue streams the smart way (without annoying users).',
+        body:`<p>Start with AdSense for baseline revenue, then layer a single affiliate program that matches your audience (e.g., tools you actually use). After 10k monthly visits, pitch simple sponsor placements: a text mention at the top of one article per week.</p>`
+      },
+      {
+        id:'starter-stack',
+        title:'Starter Stack: Ship a Site in an Evening',
+        date:'2025-04-02',
+        thumb:`https://picsum.photos/seed/stack/800/500`,
+        excerpt:'Keep it plain JS + HTML until you outgrow it.',
+        body:`<p>Pick a design system (spacing, radii, type scale), write semantic HTML, sprinkle JS for routing and forms, and deploy on Vercel. Add a custom domain when you\'re happy.</p>`
+      }
+    ];
+
+    function byDateDesc(a,b){ return a.date < b.date ? 1 : -1 }
+
+    function renderHome(){
+      const featured = document.querySelector('.featured');
+      const postsWrap = document.querySelector('.posts');
+      featured.innerHTML = '';
+      postsWrap.innerHTML = '';
+
+      posts.sort(byDateDesc);
+      posts.slice(0,3).forEach(p=> featured.appendChild(postCard(p)) );
+      posts.slice(3).forEach(p=> postsWrap.appendChild(postCard(p)) );
+    }
+
+    function postCard(p){
+      const tpl = document.getElementById('tpl-post-card');
+      const node = tpl.content.firstElementChild.cloneNode(true);
+      node.querySelector('.thumb').src = p.thumb;
+      node.querySelector('.thumb').alt = p.title;
+      node.querySelector('.title').textContent = p.title;
+      node.querySelector('.meta').textContent = new Date(p.date).toLocaleDateString();
+      node.querySelector('.content').textContent = p.excerpt;
+      node.querySelector('.readmore').href = `#/articles?id=${p.id}`;
+      node.querySelector('.readmore').addEventListener('click', e=>{
+        // let the router handle it
+      });
+      return node;
+    }
+
+    function renderArticlesList(){
+      const list = document.getElementById('articles-list');
+      list.innerHTML = '';
+      posts.sort(byDateDesc).forEach(p=>{
+        const art = document.createElement('article');
+        art.className = 'card';
+        art.innerHTML = `
+          <img src="${p.thumb}" alt="${p.title}">
+          <h2 class="title">${p.title}</h2>
+          <p class="meta">${new Date(p.date).toLocaleDateString()}</p>
+          <p class="content">${p.excerpt}</p>
+          <a class="btn" href="#/articles?id=${p.id}">Read</a>
+        `;
+        list.appendChild(art);
+      });
+    }
+
+    function renderArticleDetail(id){
+      const p = posts.find(x=>x.id===id);
+      if(!p){ location.hash = '#/articles'; return; }
+      const sec = document.getElementById('view-articles');
+      sec.innerHTML = '';
+      const art = document.createElement('article');
+      art.className = 'card prose';
+      art.innerHTML = `
+        <img src="${p.thumb}" alt="${p.title}">
+        <h2>${p.title}</h2>
+        <p class="meta">${new Date(p.date).toLocaleDateString()}</p>
+        ${p.body}
+        <p><a class="btn" href="#/articles">← Back to Articles</a></p>
+      `;
+      sec.appendChild(art);
+    }
+
+    function onRoute(){
+      renderRoute();
+      const hash = location.hash || '#/';
+      if(hash.startsWith('#/articles') && hash.includes('id=')){
+        const id = new URLSearchParams(hash.split('?')[1]).get('id');
+        renderArticleDetail(id);
+      } else if(hash === '#/articles'){
+        renderArticlesList();
+      } else if(hash === '#/' || hash === '#'){
+        renderHome();
+      }
+    }
+
+    window.addEventListener('hashchange', onRoute);
+    window.addEventListener('load', ()=>{
+      document.getElementById('year').textContent = new Date().getFullYear();
+      onRoute();
+    });
+
+    // Fake subscribe button (no backend)
+    document.getElementById('ctaSubscribe').addEventListener('click', ()=>{
+      alert('Subscribed! (demo) — Replace with your email tool later.');
+    });
+  </script>
+
+  <!-- HOW TO ADD ADSENSE LATER (after approval):
+    1) Add <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXX"> in <head>.
+    2) Add the loader script: <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+    3) Put <ins class="adsbygoogle" ...></ins> where you want ads OR enable Auto Ads in your AdSense panel.
+    4) Update privacy policy to include advertising partners and consent details.
+  -->
+</body>
+</html>
