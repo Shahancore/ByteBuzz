@@ -3,52 +3,64 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ByteBuzz — Smart, Snackable Tech & Web Tips</title>
-  <meta name="description" content="Practical tech and web tips in under 3 minutes. Clean UX, fast loads, and useful guides." />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>⚡</text></svg>">
-  <meta property="og:title" content="ByteBuzz — Smart, Snackable Tech & Web Tips" />
-  <meta property="og:description" content="Practical tech and web tips in under 3 minutes." />
+  <title>ByteBuzz — Practical Tech Guides, Fast</title>
+  <meta name="description" content="Actionable, well‑researched tech guides for creators and students: performance, web games, SEO, and monetization. Clean UX, mobile‑first, AdSense‑ready." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>✨</text></svg>">
+  <meta name="theme-color" content="#0d1117" />
+  <link rel="canonical" href="https://your-domain.example/" />
+
+  <!-- Social cards -->
+  <meta property="og:title" content="ByteBloom — Practical Tech Guides, Fast" />
+  <meta property="og:description" content="Actionable, well‑researched tech guides for creators and students." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://your-domain.example/" />
-  <meta name="robots" content="index,follow" />
+  <meta property="og:image" content="https://picsum.photos/seed/bytebloom/1200/630" />
+  <meta name="twitter:card" content="summary_large_image" />
+
   <style>
     :root{
-      --bg:#0c0f14; --panel:#101621; --soft:#0e141e; --ink:#e9f0f5; --muted:#a9b4c0; --brand:#6ef3a5; --line:#1a2230;
+      --bg:#0d1117; --panel:#0f1420; --soft:#0e1220; --ink:#e6edf3; --muted:#9fb1c1; --brand:#7ef5b2; --line:#1a2230; --accent:#58a6ff;
     }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:16px/1.65 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif}
-    img{max-width:100%;display:block}
-    a{color:var(--brand);text-decoration:none}
-    a:hover{opacity:.9}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:16px/1.7 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif}
+    img{max-width:100%;display:block;border-radius:14px;border:1px solid var(--line)}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
     .wrap{max-width:1100px;margin:0 auto;padding:16px}
-    header{position:sticky;top:0;z-index:50;background:rgba(12,15,20,.8);backdrop-filter:saturate(160%) blur(10px);border-bottom:1px solid var(--line)}
+    header{position:sticky;top:0;z-index:50;background:rgba(13,17,23,.78);backdrop-filter:saturate(160%) blur(12px);border-bottom:1px solid var(--line)}
     nav{display:flex;align-items:center;justify-content:space-between;gap:12px}
-    .logo{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.5px}
-    .navlinks{display:flex;gap:10px;flex-wrap:wrap}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.4px}
+    .navlinks{display:flex;gap:8px;flex-wrap:wrap}
     .pill{border:1px solid var(--line);color:var(--muted);padding:8px 12px;border-radius:999px}
-    .hero{border-bottom:1px solid var(--line);background:radial-gradient(1200px 300px at 50% -60%, rgba(110,243,165,.12), transparent), linear-gradient(180deg, rgba(110,243,165,.06), rgba(110,243,165,0))}
-    .hero h1{margin:0;padding:26px 0 6px;font-size:28px}
+    .hero{border-bottom:1px solid var(--line);background:
+      radial-gradient(1200px 320px at 50% -60%, rgba(126,245,178,.12), transparent),
+      linear-gradient(180deg, rgba(126,245,178,.06), rgba(126,245,178,0))}
+    .hero h1{margin:0;padding:28px 0 6px;font-size:28px}
     .hero p{margin:0 0 14px;color:var(--muted)}
-    main{display:grid;grid-template-columns:1fr;gap:18px}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid var(--line);background:#0f1522;color:var(--ink);cursor:pointer}
+    .btn:active{transform:translateY(1px)}
+    .toggle{margin-left:8px}
+    main{display:grid;grid-template-columns:1fr;gap:20px}
     @media(min-width:980px){ main{grid-template-columns:minmax(0,1fr) 320px} }
     .card{background:linear-gradient(180deg,var(--panel),var(--soft));border:1px solid var(--line);border-radius:16px;padding:16px}
-    .title{font-size:20px;margin:0 0 6px}
+    .title{font-size:22px;margin:8px 0 6px}
     .meta{font-size:12px;color:var(--muted);margin:0 0 10px}
-    .content{color:#d7e2ea;font-size:15px}
+    .content{color:#d9e3eb;font-size:15px}
     .grid{display:grid;gap:14px}
-    .posts{display:grid;gap:14px}
     .featured{display:grid;gap:14px}
     @media(min-width:720px){ .featured{grid-template-columns:repeat(3,1fr)} }
-    .tag{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:12px}
-    footer{border-top:1px solid var(--line);color:var(--muted);margin-top:24px}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid var(--line);background:#0f1420;color:var(--ink);cursor:pointer}
-    .btn:active{transform:translateY(1px)}
+    .posts{display:grid;gap:14px}
     .hidden{display:none}
-    .prose h2{margin:14px 0 8px;font-size:20px}
+    .prose h2{margin:14px 0 8px;font-size:24px}
+    .prose h3{margin:12px 0 6px;font-size:18px}
     .prose p{margin:10px 0}
     .prose li{margin:6px 0}
     .kbd{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;background:#0d1220;border:1px solid var(--line);padding:0 6px;border-radius:8px}
+    footer{border-top:1px solid var(--line);color:var(--muted);margin-top:26px}
+    .notice{font-size:12px;color:var(--muted)}
   </style>
+
+  <!-- JSON-LD Organization -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -59,6 +71,11 @@
     "sameAs": ["https://x.com/yourhandle", "https://instagram.com/yourhandle"]
   }
   </script>
+
+  <!-- AFTER APPROVAL ONLY: insert your AdSense loader in <head>
+  <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXX" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+  -->
 </head>
 <body>
   <header>
@@ -74,6 +91,8 @@
           <a class="pill" href="#/about">About</a>
           <a class="pill" href="#/contact">Contact</a>
           <a class="pill" href="#/privacy">Privacy</a>
+          <a class="pill" href="#/terms">Terms</a>
+          <button id="modeBtn" class="btn toggle" aria-label="Toggle color mode">🌙</button>
         </div>
       </nav>
     </div>
@@ -81,55 +100,66 @@
 
   <section class="hero">
     <div class="wrap">
-      <h1>Smart, Snackable Tech & Web Tips</h1>
-      <button id="ctaSubscribe" class="btn">Get Weekly Tips</button>
+      <h1>Practical Tech Guides that Respect Your Time</h1>
+      <p>We write clear, original tutorials for fast sites, engaging web games, and simple monetization — perfect for students, indie devs, and makers.</p>
+      <div class="notice">No AI spam. Every article is edited for accuracy, readability, and real‑world usefulness.</div>
     </div>
   </section>
 
   <main class="wrap">
+    <!-- HOME VIEW -->
     <section id="view-home" class="grid">
       <div class="featured"></div>
       <div class="posts"></div>
     </section>
 
+    <!-- SIDEBAR (home only) -->
     <aside id="sidebar" class="grid">
       <div class="card">
         <h3 class="title">Popular Topics</h3>
         <div class="grid" style="grid-template-columns:repeat(3,auto)">
-          <span class="tag">Performance</span>
-          <span class="tag">Web Games</span>
-          <span class="tag">SEO</span>
-          <span class="tag">JavaScript</span>
-          <span class="tag">Design</span>
-          <span class="tag">Tools</span>
+          <span class="pill">Performance</span>
+          <span class="pill">Web Games</span>
+          <span class="pill">SEO</span>
+          <span class="pill">Design</span>
+          <span class="pill">Monetization</span>
+          <span class="pill">Hosting</span>
         </div>
       </div>
       <div class="card">
         <h3 class="title">About ByteBuzz</h3>
-        <p class="content">We publish practical, 3‑minute reads about building and growing sites & apps. No fluff, just steps.</p>
+        <p class="content">ByteBuzz helps beginners and builders get results fast with honest, step‑by‑step guides. Everything here is written from first principles, tested in modern browsers, and easy to apply to real projects.</p>
       </div>
     </aside>
 
-    <!-- Routed Views -->
+    <!-- ROUTED VIEWS -->
     <section id="view-articles" class="hidden">
       <div class="grid" id="articles-list"></div>
     </section>
 
+    <section id="view-article" class="hidden"></section>
+
     <section id="view-about" class="hidden card prose">
       <h2>About</h2>
-      <p>ByteBuzz is a tiny publication focused on fast, useful tutorials for creators, students, and indie devs. Our goal is clear: help you build better sites and ship quicker.</p>
-      <p>Editorial policy: original writing, no AI‑generated spam, and transparent updates.</p>
+      <p>ByteBuzz is a tiny, independent publication dedicated to practical tech learning. Our editorial approach is simple: write guides that a motivated beginner can complete in under an hour, and include clear checkpoints so readers can verify their progress.</p>
+      <h3>Editorial Principles</h3>
+      <ul>
+        <li><strong>Clarity over jargon</strong> — we explain terms as we use them.</li>
+        <li><strong>Mobile‑first</strong> — everything is tested on small screens.</li>
+        <li><strong>Performance</strong> — we avoid bloat and measure impact.</li>
+        <li><strong>Respect</strong> — no clickbait, no dark patterns.</li>
+      </ul>
     </section>
 
     <section id="view-contact" class="hidden card prose">
       <h2>Contact</h2>
-      <p>Got feedback, a tip, or a press inquiry? Email <span class="kbd">hello@your-domain.example</span> or use the form below.</p>
+      <p>Questions, suggestions, or media inquiries? Email <span class="kbd">hello@your-domain.example</span> or use the form. We read every message.</p>
       <form onsubmit="event.preventDefault(); alert('Thanks! We\'ll reply soon.'); this.reset();">
         <label>Name<br><input required style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--line);background:#0e1420;color:var(--ink)"/></label>
         <br><br>
         <label>Email<br><input type="email" required style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--line);background:#0e1420;color:var(--ink)"/></label>
         <br><br>
-        <label>Message<br><textarea required rows="5" style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--line);background:#0e1420;color:var(--ink)"></textarea></label>
+        <label>Message<br><textarea required rows="6" style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--line);background:#0e1420;color:var(--ink)"></textarea></label>
         <br><br>
         <button class="btn" type="submit">Send</button>
       </form>
@@ -137,24 +167,51 @@
 
     <section id="view-privacy" class="hidden card prose">
       <h2>Privacy Policy</h2>
-      <p>We collect minimal analytics to understand what content is useful. No sale of personal data. Cookies may be used for basic site functionality. If we add advertising later (e.g., Google AdSense), we will update this policy with consent details and partner disclosures.</p>
-      <h3>Data We Collect</h3>
+      <p><em>Last updated: <span id="pp-date"></span></em></p>
+      <p>At <strong>ByteBuzz</strong> ("we", "our"), accessible from <strong>your-domain.example</strong>, we respect your privacy. This policy explains what we collect and how we use it.</p>
+      <h3>Information We Collect</h3>
       <ul>
-        <li>Anonymous usage data (page views, device type)</li>
-        <li>Voluntary messages from the contact form</li>
+        <li>Contact details you submit via the contact form (name, email, message).</li>
+        <li>Anonymous usage data (pages visited, device type) to improve content.</li>
+        <li>If advertising is enabled, partners such as Google may set cookies to deliver and measure ads.</li>
       </ul>
-      <h3>Your Controls</h3>
+      <h3>How We Use Data</h3>
       <ul>
-        <li>Use an ad/tracker blocker if you prefer</li>
-        <li>Contact us to delete your messages</li>
+        <li>To operate and improve the website.</li>
+        <li>To respond to messages you send us.</li>
+        <li>To show ads and measure their performance (after you consent in regions where that is required).</li>
       </ul>
+      <h3>Google AdSense</h3>
+      <p>Google uses cookies and similar technologies to serve personalized and non‑personalized ads. You can manage your preferences at <a href="https://adssettings.google.com/">Google Ads Settings</a>. Once we enable ads, a consent banner will appear for users in the EEA/UK/CH as required.</p>
+      <h3>Your Choices</h3>
+      <ul>
+        <li>You may use a content blocker if you prefer.</li>
+        <li>You can request deletion of messages you sent via our contact form.</li>
+      </ul>
+      <h3>Changes</h3>
+      <p>We may update this policy from time to time and will adjust the date above.</p>
+    </section>
+
+    <section id="view-terms" class="hidden card prose">
+      <h2>Terms of Use</h2>
+      <p>By using ByteBuzz you agree to these terms.</p>
+      <h3>Content</h3>
+      <p>Articles are provided for educational purposes. We strive for accuracy but do not guarantee completeness. Applying steps is at your own discretion.</p>
+      <h3>Links</h3>
+      <p>We sometimes link to external resources. We are not responsible for their content or practices.</p>
+      <h3>Advertisements & Affiliates</h3>
+      <p>We may display advertisements and may include affiliate links to products we genuinely recommend. Sponsored content will be labeled clearly.</p>
+      <h3>Limitation of Liability</h3>
+      <p>We are not liable for damages arising from the use of this website.</p>
     </section>
   </main>
 
   <footer class="wrap">
     <p>© <span id="year"></span> ByteBuzz — All rights reserved.</p>
+    
   </footer>
 
+  <!-- Post card template -->
   <template id="tpl-post-card">
     <article class="card">
       <img class="thumb" alt="" />
@@ -166,90 +223,149 @@
   </template>
 
   <script>
-    // ---- Minimal SPA Router (hash-based) ----
+    // ---- Color mode toggle ----
+    const modeBtn = document.getElementById('modeBtn');
+    let light = false;
+    function applyMode(){
+      document.documentElement.style.setProperty('--bg', light ? '#ffffff' : '#0d1117');
+      document.documentElement.style.setProperty('--panel', light ? '#f7f7f9' : '#0f1420');
+      document.documentElement.style.setProperty('--soft', light ? '#f4f5f7' : '#0e1220');
+      document.documentElement.style.setProperty('--ink', light ? '#0d1117' : '#e6edf3');
+      document.documentElement.style.setProperty('--muted', light ? '#4b5563' : '#9fb1c1');
+      document.body.style.color = getComputedStyle(document.documentElement).getPropertyValue('--ink');
+      modeBtn.textContent = light ? '☀️' : '🌙';
+    }
+    modeBtn.addEventListener('click', ()=>{ light=!light; applyMode(); });
+    applyMode();
+
+    // ---- Minimal SPA Router ----
     const routes = {
       '#/': 'view-home',
       '#/articles': 'view-articles',
       '#/about': 'view-about',
       '#/contact': 'view-contact',
-      '#/privacy': 'view-privacy'
+      '#/privacy': 'view-privacy',
+      '#/terms': 'view-terms'
     };
     function renderRoute(){
       const hash = location.hash || '#/';
       const viewId = routes[hash] || 'view-home';
       document.querySelectorAll('main > section').forEach(sec=>sec.classList.add('hidden'));
       document.getElementById(viewId).classList.remove('hidden');
-      // toggle sidebar on home only (and desktop by CSS grid)
       document.getElementById('sidebar').style.display = (viewId === 'view-home') ? '' : 'none';
     }
-    window.addEventListener('hashchange', renderRoute);
+    window.addEventListener('hashchange', onRoute);
 
-    // ---- Demo Content (substantial, human-written style) ----
+    // ---- High‑quality articles ----
     const posts = [
       {
-        id:'instant-lcp',
-        title:'Cut Largest Contentful Paint in 5 Minutes',
-        date:'2025-07-28',
-        thumb:`https://picsum.photos/seed/lcp/800/500`,
-        excerpt:'Quick wins to get your LCP under 2.5s without a full rewrite.',
-        body:`<p>Start by serving a compressed hero image (AVIF/WebP) sized to the viewport. Inline a tiny critical CSS block for the above-the-fold layout, then defer everything else with <code>rel=\"preload\"</code> for fonts and <code>defer</code> for scripts. Avoid layout shift by reserving image space with width/height.</p>
-        <p>Measure with PageSpeed Insights, repeat until LCP falls below 2.5s. It\'s boring, but boring is fast.</p>`
+        id:'lcp-quick-wins',
+        title:'Largest Contentful Paint: 9 Quick Wins for a Sub‑2.5s Site',
+        date:'2025-08-01',
+        thumb:`https://picsum.photos/seed/lcp2/800/500`,
+        excerpt:'A practical checklist you can complete tonight to pass Core Web Vitals on a budget hosting plan.',
+        body:`<p><strong>Largest Contentful Paint (LCP)</strong> measures how quickly the main content appears. Search engines reward sites that consistently load the hero content within 2.5 seconds. Here are nine improvements that compound without a rewrite.</p>
+        <ol>
+          <li><strong>Serve the hero as AVIF/WebP</strong>. Keep it under 100KB for mobile. Export multiple sizes and use <code>srcset</code> so the browser picks the best fit.</li>
+          <li><strong>Inline critical CSS</strong> for the header, hero, and first fold. Defer the rest. A 3–5KB inline block prevents flashes and reduces render‑blocking.</li>
+          <li><strong>Use <code>fetchpriority="high"</code> on the hero image</strong> so browsers prioritize the element that defines LCP.</li>
+          <li><strong>Preload the primary font</strong> and limit to the characters you need. Variable fonts can reduce files, but often a system font stack is fastest.</li>
+          <li><strong>Defer third‑party scripts</strong>. Analytics, widgets, and chat should not block paint. Load them after the first interaction.</li>
+          <li><strong>Reserve space for media</strong> with width/height so layout doesn’t shift. This also protects your CLS score.</li>
+          <li><strong>Compress and cache</strong> with Brotli or Gzip and long cache lifetimes. Fingerprint your assets per deploy.</li>
+          <li><strong>Measure on real devices</strong>. Use <em>PageSpeed Insights</em> and your phone on a 4G connection; aim for repeatable results.</li>
+          <li><strong>Ship fewer bytes</strong>. Replace heavy frameworks on content pages with plain HTML and small interactive islands.</li>
+        </ol>
+        <p>Apply these in order and retest. Most sites hit the threshold after fixing media, CSS, and script priorities.</p>`
       },
       {
-        id:'seo-setup',
-        title:'Zero-Overwhelm SEO Setup for New Sites',
-        date:'2025-07-12',
+        id:'webgame-retention',
+        title:'Web Game Retention: Tiny UX Tweaks that Add Minutes of Play',
+        date:'2025-07-20',
+        thumb:`https://picsum.photos/seed/retention/800/500`,
+        excerpt:'Session length is the hidden engine of revenue. These tweaks raise both without ads getting in the way.',
+        body:`<p>Players quit when they are confused or when progress feels invisible. The following tweaks keep momentum up and reduce friction.</p>
+        <ul>
+          <li><strong>Scene previews</strong>: before each chapter, show a single sentence of what might happen. Curiosity drives taps.</li>
+          <li><strong>Micro‑goals</strong>: add a checklist for endings, artifacts, or secrets discovered. Completionists will return.</li>
+          <li><strong>Predictable input</strong>: on mobile, large tap targets and forgiving timing windows prevent accidental failures.</li>
+          <li><strong>Asset prefetch</strong>: load the next scene’s images while the player reads. Perceived speed is retention.</li>
+          <li><strong>Shareable outcomes</strong>: a small, tasteful “Share my ending” button markets the game for free.</li>
+        </ul>
+        <p>Measure retention by time‑on‑page and replays. Keep endings short; the promise of another path should always be visible.</p>`
+      },
+      {
+        id:'seo-foundation',
+        title:'SEO Foundation for New Sites: A 1‑Weekend Setup',
+        date:'2025-07-10',
         thumb:`https://picsum.photos/seed/seo/800/500`,
-        excerpt:'Skip the guru noise. Here\'s a clean checklist that works.',
-        body:`<ul><li>Create a human homepage that states who you are, what you do, and for whom.</li><li>Add <code>sitemap.xml</code> and submit to Search Console.</li><li>Write 3 helpful articles that solve real problems (no keyword stuffing).</li><li>Make every page load fast on mobile.</li></ul>`
+        excerpt:'Skip the noise: clear steps that get you indexed, crawled, and ranking without buying tools.',
+        body:`<p>Search optimization rewards clarity and consistency over tricks. This weekend plan sets up the basics so future articles work harder.</p>
+        <h3>1) State your purpose</h3>
+        <p>Your homepage should answer: who you help, what they get, and why you are credible. Write it for humans first.</p>
+        <h3>2) Technical hygiene</h3>
+        <ul>
+          <li>Create <code>sitemap.xml</code> and <code>robots.txt</code> (index the content, disallow drafts).</li>
+          <li>Use descriptive titles and one <code>h1</code> per page.</li>
+          <li>Make pages fast on mobile; avoid layout shift.</li>
+        </ul>
+        <h3>3) Content that solves a problem</h3>
+        <p>Pick topics you can demonstrate from experience. Outline the steps, show pitfalls, and offer a checklist at the end.</p>
+        <h3>4) Internal links</h3>
+        <p>Link related guides with short, descriptive anchor text. Internal links are your site’s recommendation system.</p>
+        <h3>5) Measure and iterate</h3>
+        <p>Search Console shows queries, pages, and positions. Update articles quarterly with fresher examples.</p>`
       },
       {
-        id:'katgame-retention',
-        title:'Keep Players Longer: 6 Tiny UX Tweaks for Web Games',
-        date:'2025-06-30',
-        thumb:`https://picsum.photos/seed/ux/800/500`,
-        excerpt:'Session length is revenue. These tweaks raise both.',
-        body:`<ol><li>Add a progress indicator so players know there\'s more to see.</li><li>Between scenes, tease a choice that unlocks a secret ending.</li><li>Prefetch assets for the next scene to remove stutters.</li><li>Offer a one-click \"share my ending\" button.</li><li>Surface \"Play Again\" with a new path suggested.</li><li>Respect back/forward navigation.</li></ol>`
-      },
-      {
-        id:'image-ops',
-        title:'Serve Images Like a Pro (Without a CDN)',
-        date:'2025-05-18',
-        thumb:`https://picsum.photos/seed/img/800/500`,
-        excerpt:'A few headers and formats take you 80% of the way.',
-        body:`<p>Export AVIF first with WebP fallback. Use <code>fetchpriority=\"high\"</code> for the hero, <code>loading=\"lazy\"</code> elsewhere. Set long cache headers and unique filenames per build to bust cache safely.</p>`
-      },
-      {
-        id:'monetize',
-        title:'Monetization 101: Ads, Affiliates, and Sponsors',
-        date:'2025-04-22',
+        id:'monetization-stack',
+        title:'Monetization Stack: From AdSense to Sponsors Without Annoying Users',
+        date:'2025-06-25',
         thumb:`https://picsum.photos/seed/money/800/500`,
-        excerpt:'Stack revenue streams the smart way (without annoying users).',
-        body:`<p>Start for baseline revenue, then layer a single affiliate program that matches your audience (e.g., tools you actually use). After 10k monthly visits,         pitch simple sponsor placements: a text mention at the top of one article per week.</p>`
+        excerpt:'Start with baseline ad revenue, then layer affiliates and sponsorships the right way.',
+        body:`<p>Ads are the easiest way to earn but rarely the most profitable. A balanced stack keeps pages fast and readers happy.</p>
+        <ol>
+          <li><strong>Phase 1 — AdSense</strong>: enable Auto Ads after approval, but cap vignette frequency and block jarring formats. Keep content readable.</li>
+          <li><strong>Phase 2 — Affiliates</strong>: add one program that matches your audience (e.g., dev tools). Link only where genuinely helpful.</li>
+          <li><strong>Phase 3 — Sponsors</strong>: after ~10k monthly readers, sell a simple text sponsorship atop one article per week. Include a clear label.</li>
+          <li><strong>Phase 4 — Products</strong>: package your best tutorials into a short PDF or mini‑course.</li>
+        </ol>
+        <p>Revenue grows when readers trust you. Prioritize useful content; ads are an outcome, not the product.</p>`
       },
       {
-        id:'starter-stack',
-        title:'Starter Stack: Ship a Site in an Evening',
-        date:'2025-04-02',
-        thumb:`https://picsum.photos/seed/stack/800/500`,
-        excerpt:'Keep it plain JS + HTML until you outgrow it.',
-        body:`<p>Pick a design system (spacing, radii, type scale), write semantic HTML, sprinkle JS for routing and forms, and deploy on Vercel. Add a custom domain when you\'re happy.</p>`
+        id:'image-optimization',
+        title:'Serve Images Like a Pro: Formats, Preloads, and Caching',
+        date:'2025-06-08',
+        thumb:`https://picsum.photos/seed/images/800/500`,
+        excerpt:'Images are usually 60–80% of page weight. These practices cut bytes without losing quality.',
+        body:`<ul>
+          <li><strong>Prefer AVIF</strong> with WebP fallback; JPEG only for edge cases.</li>
+          <li><strong>Use <code>srcset</code> and sizes</strong> so small screens avoid downloading desktop assets.</li>
+          <li><strong>Preload the hero</strong> and defer everything below the fold with <code>loading="lazy"</code>.</li>
+          <li><strong>Immutable caching</strong>: add unique filenames per deploy and set long cache lifetimes.</li>
+          <li><strong>Accessibility</strong>: write accurate <code>alt</code> text; avoid text baked into images.</li>
+        </ul>
+        <p>Measure savings in your browser’s network panel. Your goal is a visually complete first fold under 2MB total.</p>`
+      },
+      {
+        id:'hosting-checklist',
+        title:'Hosting & Deployment: A No‑Drama Checklist for Fast Sites',
+        date:'2025-05-20',
+        thumb:`https://picsum.photos/seed/hosting/800/500`,
+        excerpt:'If deploys are scary, you won’t ship. This checklist keeps things boring and reliable.',
+        body:`<ol>
+          <li>Use a version control system (Git) and atomic deploys.</li>
+          <li>Serve over HTTPS; redirect http → https.</li>
+          <li>Compress with Brotli and set caching headers.</li>
+          <li>Monitor uptime and size budgets; fail builds that exceed limits.</li>
+          <li>Backups: keep copies of critical content in the cloud and locally.</li>
+        </ol>
+        <p>Simple, consistent processes free your attention for writing and building.</p>`
       }
     ];
 
     function byDateDesc(a,b){ return a.date < b.date ? 1 : -1 }
 
-    function renderHome(){
-      const featured = document.querySelector('.featured');
-      const postsWrap = document.querySelector('.posts');
-      featured.innerHTML = '';
-      postsWrap.innerHTML = '';
-
-      posts.sort(byDateDesc);
-      posts.slice(0,3).forEach(p=> featured.appendChild(postCard(p)) );
-      posts.slice(3).forEach(p=> postsWrap.appendChild(postCard(p)) );
-    }
-
+    // ---- Renderers ----
     function postCard(p){
       const tpl = document.getElementById('tpl-post-card');
       const node = tpl.content.firstElementChild.cloneNode(true);
@@ -259,10 +375,17 @@
       node.querySelector('.meta').textContent = new Date(p.date).toLocaleDateString();
       node.querySelector('.content').textContent = p.excerpt;
       node.querySelector('.readmore').href = `#/articles?id=${p.id}`;
-      node.querySelector('.readmore').addEventListener('click', e=>{
-        // let the router handle it
-      });
       return node;
+    }
+
+    function renderHome(){
+      const featured = document.querySelector('.featured');
+      const postsWrap = document.querySelector('.posts');
+      featured.innerHTML = '';
+      postsWrap.innerHTML = '';
+      posts.sort(byDateDesc);
+      posts.slice(0,3).forEach(p=> featured.appendChild(postCard(p)) );
+      posts.slice(3).forEach(p=> postsWrap.appendChild(postCard(p)) );
     }
 
     function renderArticlesList(){
@@ -282,11 +405,23 @@
       });
     }
 
+    function articleSchema(p){
+      return {
+        "@context":"https://schema.org",
+        "@type":"Article",
+        "headline": p.title,
+        "datePublished": p.date,
+        "author": {"@type":"Person","name":"ByteBuzz Editors"},
+        "image": p.thumb,
+        "publisher": {"@type":"Organization","name":"ByteBuzz"}
+      }
+    }
+
     function renderArticleDetail(id){
       const p = posts.find(x=>x.id===id);
-      if(!p){ location.hash = '#/articles'; return; }
-      const sec = document.getElementById('view-articles');
+      const sec = document.getElementById('view-article');
       sec.innerHTML = '';
+      if(!p){ sec.innerHTML = '<div class="card"><p>Article not found.</p></div>'; return; }
       const art = document.createElement('article');
       art.className = 'card prose';
       art.innerHTML = `
@@ -297,33 +432,49 @@
         <p><a class="btn" href="#/articles">← Back to Articles</a></p>
       `;
       sec.appendChild(art);
+
+      // Inject JSON-LD for the article
+      const old = document.getElementById('article-jsonld');
+      if(old) old.remove();
+      const s = document.createElement('script');
+      s.type = 'application/ld+json';
+      s.id = 'article-jsonld';
+      s.textContent = JSON.stringify(articleSchema(p));
+      document.head.appendChild(s);
     }
 
-    function onRoute(){
-      renderRoute();
+    function renderRoute(){
       const hash = location.hash || '#/';
-      if(hash.startsWith('#/articles') && hash.includes('id=')){
+      const base = hash.split('?')[0];
+      const viewMap = {
+        '#/': 'view-home',
+        '#/articles': hash.includes('id=') ? 'view-article' : 'view-articles',
+        '#/about': 'view-about',
+        '#/contact': 'view-contact',
+        '#/privacy': 'view-privacy',
+        '#/terms': 'view-terms'
+      };
+      const viewId = viewMap[base] || 'view-home';
+      document.querySelectorAll('main > section').forEach(sec=>sec.classList.add('hidden'));
+      document.getElementById(viewId).classList.remove('hidden');
+      document.getElementById('sidebar').style.display = (viewId === 'view-home') ? '' : 'none';
+
+      if(base === '#/' || base === '#') renderHome();
+      if(base === '#/articles' && hash.includes('id=')){
         const id = new URLSearchParams(hash.split('?')[1]).get('id');
         renderArticleDetail(id);
-      } else if(hash === '#/articles'){
-        renderArticlesList();
-      } else if(hash === '#/' || hash === '#'){
-        renderHome();
       }
+      if(base === '#/articles' && !hash.includes('id=')) renderArticlesList();
     }
 
+    function onRoute(){ renderRoute(); }
     window.addEventListener('hashchange', onRoute);
-    window.addEventListener('load', ()=>{
-      document.getElementById('year').textContent = new Date().getFullYear();
-      onRoute();
-    });
 
-    // Fake subscribe button (no backend)
-    document.getElementById('ctaSubscribe').addEventListener('click', ()=>{
-      alert('Subscribed! (demo) — Replace with your email tool later.');
-    });
+    // Init
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('pp-date').textContent = new Date().toLocaleDateString();
+    onRoute();
   </script>
-
 
 </body>
 </html>
